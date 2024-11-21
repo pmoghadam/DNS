@@ -15,6 +15,8 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, see <https://www.gnu.org/licenses/>.
 */
 
+/* https://www.rfc-editor.org/rfc/rfc1035.txt */
+
 // gcc -o dnsclient-stage01 dnsclient-stage01.c
 
 #include <stdio.h>
