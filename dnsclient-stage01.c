@@ -17,7 +17,7 @@ along with this program; if not, see <https://www.gnu.org/licenses/>.
 
 /* https://www.rfc-editor.org/rfc/rfc1035.txt */
 
-// gcc -o dnsclient-stage01 dnsclient-stage01.c
+// gcc dnsclient-stage01.c -o dnsclient-stage01
 
 #include <stdio.h>
 #include <stdint.h>
@@ -216,7 +216,7 @@ ssize_t sndqr_rcvrs(char *packet, int len, char *server)
     dst.sin_port = htons(53);
     dst.sin_addr.s_addr = inet_addr(server);
 
-    int status = sendto(sockfd, packet, len, 0,
+    sendto(sockfd, packet, len, 0,
             (struct sockaddr*)&dst, sizeof(dst));
 
     puts("Receiving Response ...");
